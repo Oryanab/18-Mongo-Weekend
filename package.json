@@ -1,0 +1,25 @@
+{
+  "name": "18-Mongo-Weekend",
+  "version": "1.0.0",
+  "description": "1. Creating Databases & Collections using mongoose\r 2. Create, Read, Update, Delete (CRUD) in MongoDB - Finding, Inserting, Deleting & Updating Elements\r 3. Data Types - An Overview\r 4. Query Selectors\r 5. Schemas",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Oryanab/18-Mongo-Weekend.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Oryanab/18-Mongo-Weekend/issues"
+  },
+  "homepage": "https://github.com/Oryanab/18-Mongo-Weekend#readme",
+  "dependencies": {
+    "dotenv": "^10.0.0",
+    "mongoose": "^6.0.12",
+    "mongoose-unique-validator": "^3.0.0"
+  }
+}
