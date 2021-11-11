@@ -110,6 +110,73 @@ function QueryFindDocuments() {
   getAllStudentsBirth();
   getAllStudentsPhoneStarts();
 }
+
+function addJavaScriptToYahalom() {
+  Student.update(
+    { name: "Yahalom" },
+    { $push: { courses: { $each: ["JavaScript"] } } }
+  )
+    .then((result) => {
+      console.log(result);
+    })
+    .catch((err) => {
+      console.log(err);
+    });
+}
+
+function updateBirthToKoren() {
+  Student.findOneAndUpdate({ name: "Koren" }, { birth: new Date("1998-12-02") })
+    .then((result) => {
+      console.log(result);
+    })
+    .catch((err) => {
+      console.log(err);
+    });
+}
+
+function findAllStudentsNameContainsO() {
+  Student.find({ name: { $regex: "o", $options: "i" } })
+    .then((result) => {
+      console.log(result);
+    })
+    .catch((err) => {
+      console.log(err);
+    });
+}
+
+function findAllStudentsSurNameContainsHOrY() {
+  Student.find(
+    { SurName: { $regex: "y", $options: "i" } },
+    { SurName: { $regex: "h", $options: "i" } }
+  )
+    .then((result) => {
+      console.log(result);
+    })
+    .catch((err) => {
+      console.log(err);
+    });
+}
+
+function deleteStudentNameIdo() {
+  Student.findOneAndDelete({ name: /^ido$/i })
+    .then((result) => {
+      console.log(result);
+    })
+    .catch((err) => {
+      console.log(err);
+    });
+}
+
+function deleteStudentDateSet() {
+  Student.findOneAndDelete({ birth: new Date("1998-04-02") })
+    .then((result) => {
+      console.log(result);
+    })
+    .catch((err) => {
+      console.log(err);
+    });
+}
+
 //   Blog.find()
 //     .then((result) => {
 //       console.log(result);
