@@ -13,47 +13,9 @@ mongoose
   });
 const Schema = mongoose.Schema;
 
-const userSchema = new Schema(
-  {
-    username: {
-      type: String,
-    },
-    first_name: {
-      type: String,
-    },
-    last_name: {
-      type: String,
-    },
-  },
-  { timestamps: true }
-);
+const UserSchema = mongoose.Schema({}, { strict: false }, { timestamps: true });
 
-const fullnameSchema = new Schema(
-  {
-    first: {
-      type: String,
-    },
-    last: {
-      type: String,
-    },
-  },
-  { timestamps: true }
-);
-
-const secondUserSchema = new Schema(
-  {
-    username: {
-      type: String,
-    },
-    full_name: {
-      type: fullnameSchema,
-    },
-  },
-  { timestamps: true }
-);
-
-const User = mongoose.model("User", secondUserSchema);
-//const secondUser = mongoose.model("User", secondUserSchema);
+const User = mongoose.model("User", UserSchema);
 
 const postsSchema = new Schema(
   {
